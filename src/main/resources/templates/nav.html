@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>users</title>
+    <link rel="stylesheet"  th:href="@{/css/bootstrap.css}"/>
+</head>
+<body>
+<form method="post" action="/users" modelAttribute="user">
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Contact Number</th>
+        <th scope="col">Address</th>
+        <th scope="col">User Type</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="user:${users}">
+
+        <td th:text="${user.id}">adssasas</td>
+        <td th:text="${user.name}">yiloii</td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.contactNumber}"></td>
+        <td th:text="${user.address}"></td>
+        <td></td>
+    </tr>
+
+    </tbody>
+</table>
+</form>
+<p>
+<form method="get" action="/users">
+    <button type="submit" class="b">Return to homepage</button>
+</form>
+</p>
+</body>
+</html>
